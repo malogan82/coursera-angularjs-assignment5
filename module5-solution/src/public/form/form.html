@@ -23,10 +23,9 @@
             Phone must be in the format ###-###-####
     </span>
     <br>
-    Menu Number <input class="form" type="text" name="menuNumber"
+    Menu Item <input class="form" type="text" name="menuNumber"
                       placeholder="Menu number of your favorite dish"
-                      ng-model="formCtrl.user.menuNumber"
-                      required>
+                      ng-model="formCtrl.user.menuNumber">
     <span>{{formCtrl.errorMessage}}</span>
     <br>
     <button class="form" ng-disabled="signForm.$invalid" ng-click="formCtrl.getMenuItem(formCtrl.user.menuNumber)">Submit</button>
