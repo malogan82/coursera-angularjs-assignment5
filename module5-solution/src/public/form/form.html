@@ -1,0 +1,36 @@
+<div id="main-content" class="container">
+  Sign Up
+  <br>
+  <br>
+  <form name="signForm" novalidate>
+    First Name <input class="form" type="text" name="firstName" placeholder="First Name"
+                      ng-model="formCtrl.user.firstName" required>
+    <br>
+    Last Name <input class="form" type="text" name="lastName" placeholder="Last Name"
+                      ng-model="formCtrl.user.lastName" required>
+    <br>
+    Email Address <input class="form" type="email" name="email" placeholder="Email"
+                      ng-model="formCtrl.user.email" required>
+    <span ng-if="signForm.email.$invalid && signForm.email.$touched">
+            Must be a valid email address: handle@domain format
+    </span>
+    <br>
+    Phone Number <input class="form" type="text" name="phone" placeholder="Phone ###-###-####"
+                      ng-model="formCtrl.user.phone"
+                      pattern="(\d{3})-(\d{3})-(\d{4})"
+                      required>
+    <span ng-if="signForm.phone.$invalid && signForm.phone.$touched">
+            Phone must be in the format ###-###-####
+    </span>
+    <br>
+    Menu Number <input class="form" type="text" name="menuNumber"
+                      placeholder="Menu number of your favorite dish"
+                      ng-model="formCtrl.user.menuNumber"
+                      required>
+    <span>{{formCtrl.errorMessage}}</span>
+    <br>
+    <button class="form" ng-disabled="signForm.$invalid" ng-click="formCtrl.getMenuItem(formCtrl.user.menuNumber)">Submit</button>
+  </form>
+  <br>
+  <span>{{formCtrl.message}}
+</div>

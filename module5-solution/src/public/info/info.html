@@ -1,0 +1,29 @@
+<div id="main-content" class="container">
+  <div ng-if="infoCtrl.registeredUser.firstName">
+    First Name:   {{infoCtrl.registeredUser.firstName}}
+    <br>
+    <br>
+    Last Name:    {{infoCtrl.registeredUser.lastName}}
+    <br>
+    <br>
+    Email:        {{infoCtrl.registeredUser.email}}
+    <br>
+    <br>
+    Phone:        {{infoCtrl.registeredUser.phone}}
+    <br>
+    <br>
+    Favorite Menu Item
+    <br>
+    Title: {{infoCtrl.registeredUser.menuItem.name}}
+    <br>
+    Description: {{infoCtrl.registeredUser.menuItem.description}}
+    <br>
+    <br>
+    <img width="250" height="150"
+         ng-src="{{infoCtrl.basePath}}/images/{{infoCtrl.registeredUser.menuItem.short_name}}.jpg"
+         alt="{{infoCtrl.registeredUser.menuItem.name}}">
+  </div>
+  <div ng-hide="infoCtrl.registeredUser.firstName">
+    Not Signed Up Yet. <a ui-sref="public.form">Sign up Now!</a>
+  </div>
+</div>
